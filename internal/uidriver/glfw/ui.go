@@ -846,10 +846,14 @@ event:
 }
 
 func (u *UserInterface) init() error {
-	if u.Graphics().IsGL() {
+	/*if u.Graphics().IsGL() {
 		glfw.WindowHint(glfw.ClientAPI, glfw.OpenGLAPI)
 		glfw.WindowHint(glfw.ContextVersionMajor, 2)
 		glfw.WindowHint(glfw.ContextVersionMinor, 1)
+	} else */if u.Graphics().IsGL() { // TODO: Shoule somehow be ES
+		glfw.WindowHint(glfw.ClientAPI, glfw.OpenGLAPI)
+		glfw.WindowHint(glfw.ContextVersionMajor, 2)
+		glfw.WindowHint(glfw.ContextVersionMinor, 0)
 	} else {
 		glfw.WindowHint(glfw.ClientAPI, glfw.NoAPI)
 	}
