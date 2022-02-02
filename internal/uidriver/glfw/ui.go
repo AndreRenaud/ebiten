@@ -20,6 +20,7 @@ package glfw
 import (
 	"fmt"
 	"image"
+	"log"
 	"os"
 	"runtime"
 	"sync"
