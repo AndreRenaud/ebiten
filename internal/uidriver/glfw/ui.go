@@ -191,11 +191,11 @@ func initialize() error {
 
 	// Create system cursors. These cursors are destroyed at glfw.Terminate().
 	glfwSystemCursors[driver.CursorShapeDefault] = nil
-	glfwSystemCursors[driver.CursorShapeText] = glfw.CreateStandardCursor(glfw.IBeamCursor)
-	glfwSystemCursors[driver.CursorShapeCrosshair] = glfw.CreateStandardCursor(glfw.CrosshairCursor)
-	glfwSystemCursors[driver.CursorShapePointer] = glfw.CreateStandardCursor(glfw.HandCursor)
-	glfwSystemCursors[driver.CursorShapeEWResize] = glfw.CreateStandardCursor(glfw.HResizeCursor)
-	glfwSystemCursors[driver.CursorShapeNSResize] = glfw.CreateStandardCursor(glfw.VResizeCursor)
+	glfwSystemCursors[driver.CursorShapeText] = nil //glfw.CreateStandardCursor(glfw.IBeamCursor)
+	glfwSystemCursors[driver.CursorShapeCrosshair] = nil //glfw.CreateStandardCursor(glfw.CrosshairCursor)
+	glfwSystemCursors[driver.CursorShapePointer] = nil //glfw.CreateStandardCursor(glfw.HandCursor)
+	glfwSystemCursors[driver.CursorShapeEWResize] = nil //glfw.CreateStandardCursor(glfw.HResizeCursor)
+	glfwSystemCursors[driver.CursorShapeNSResize] = nil //glfw.CreateStandardCursor(glfw.VResizeCursor)
 
 	return nil
 }
@@ -850,7 +850,7 @@ func (u *UserInterface) init() error {
 		glfw.WindowHint(glfw.ClientAPI, glfw.OpenGLAPI)
 		glfw.WindowHint(glfw.ContextVersionMajor, 2)
 		glfw.WindowHint(glfw.ContextVersionMinor, 1)
-	} else */if u.Graphics().IsGL() { // TODO: Shoule somehow be ES
+	} else */if u.Graphics().IsGL() { // TODO: Should somehow be ES
 		glfw.WindowHint(glfw.ClientAPI, glfw.OpenGLAPI)
 		glfw.WindowHint(glfw.ContextVersionMajor, 2)
 		glfw.WindowHint(glfw.ContextVersionMinor, 0)
