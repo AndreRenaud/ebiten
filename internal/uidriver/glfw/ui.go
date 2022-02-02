@@ -188,6 +188,7 @@ func initialize() error {
 	v := m.GetVideoMode()
 	theUI.initFullscreenWidthInDIP = int(theUI.dipFromGLFWMonitorPixel(float64(v.Width), m))
 	theUI.initFullscreenHeightInDIP = int(theUI.dipFromGLFWMonitorPixel(float64(v.Height), m))
+	log.Printf("about to init cursors")
 
 	// Create system cursors. These cursors are destroyed at glfw.Terminate().
 	glfwSystemCursors[driver.CursorShapeDefault] = nil
@@ -196,6 +197,7 @@ func initialize() error {
 	glfwSystemCursors[driver.CursorShapePointer] = nil //glfw.CreateStandardCursor(glfw.HandCursor)
 	glfwSystemCursors[driver.CursorShapeEWResize] = nil //glfw.CreateStandardCursor(glfw.HResizeCursor)
 	glfwSystemCursors[driver.CursorShapeNSResize] = nil //glfw.CreateStandardCursor(glfw.VResizeCursor)
+	log.Printf("done with cursors")
 
 	return nil
 }
